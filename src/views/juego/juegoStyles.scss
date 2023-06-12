@@ -1,0 +1,69 @@
+.juego_container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.juego {
+    display: flex;
+    gap: 10px;
+    padding-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.juego_img {
+    height: 300px;
+    width: fit-content;
+}
+
+.juego_description {
+    width: 370px;
+}
+
+.comprador {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 40px 0;
+    gap: 20px;
+}
+
+.select_buyer {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #4158D0;
+    border-radius: 4px;
+    font-size: 16px;
+    
+    option {
+      background-color: #f8f8f8;
+      font-size: 14px;
+      color: #333;
+    }
+    option:checked {
+        background-color: #4158D0;
+        color: #fff;
+    }
+}
+
+.sell_game_btn {
+    background-color: #fff;
+    border: 1px solid grey;
+    border-radius: 10px;
+    font-weight: 600;
+    margin: 10px auto;
+    padding: 10px;
+    text-transform: uppercase;
+    width: 80px;
+}
+
+.sell_game_btn:hover {
+    background-color: #4158D0;
+    color: #fff;
+    transition: .5s;
+}

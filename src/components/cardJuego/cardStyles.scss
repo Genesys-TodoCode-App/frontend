@@ -1,0 +1,40 @@
+.card {
+    border: 1px solid grey;
+    border-radius: 10px;
+    background-color: #000;
+    color: #fff;
+    opacity: .8;
+    height: fit-content;
+    padding: 20px;
+    width: 250px;
+}
+
+.card_title {
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+    white-space: nowrap;
+}
+
+.card_img {
+    height: 166px;
+    width: 100%;
+}
+
+.card_sell_btn {
+    background-color: #fff;
+    border: 1px solid grey;
+    border-radius: 10px;
+    font-weight: 600;
+    margin: 10px auto;
+    padding: 10px;
+    text-transform: uppercase;
+    width: 80px;
+}
+
+.card_sell_btn:hover {
+    background-color: #4158D0;
+    color: #fff;
+    transition: .5s;
+}

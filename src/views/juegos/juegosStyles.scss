@@ -1,0 +1,13 @@
+.juegos_container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cards_juegos {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 3fr 3fr 3fr;
+    padding: 50px 0;
+}

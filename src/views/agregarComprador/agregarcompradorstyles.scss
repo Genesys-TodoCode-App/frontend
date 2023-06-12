@@ -1,0 +1,56 @@
+.agregarComprador_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    h1 {
+        color: #fff;
+    }
+}
+
+.agregarComprador_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30px;
+    border: 1px solid #4158D0;
+    border-radius: 20px;
+    padding: 30px 10px;
+    background-color: #000;
+    opacity: .8;
+    width: 340px;
+
+    .form_field {
+        background-color: #fff;
+        border: 1px solid grey;
+        border-radius: 10px;
+        height: 24px;
+        margin: 10px auto;
+        width: 70%;
+    }
+    label {
+        color: #fff;
+        font-weight: 600;
+        margin: 0 15%;
+    }
+
+    .submit_buyer {
+        background-color: #fff;
+        border: 1px solid grey;
+        border-radius: 10px;
+        font-weight: 600;
+        padding: 10px;
+        margin: auto;
+        margin-top: 20px;
+        text-transform: uppercase;
+        width: fit-content;
+    }
+
+    .submit_buyer:hover {
+        background-color: #4158D0;
+        color: #fff;
+        transition: .5s;
+    }
+}

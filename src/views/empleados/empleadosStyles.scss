@@ -1,0 +1,14 @@
+.empleados_container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.empleados {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    margin-top: 30px;
+    gap: 30px;
+}
