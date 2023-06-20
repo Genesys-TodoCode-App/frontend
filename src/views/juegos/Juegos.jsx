@@ -22,7 +22,6 @@ const Juegos = () => {
                   if(response.ok) {
                     const res = await response.json()
                     setJuegos(res);
-                    console.log('juegos ', res);
                   } else {
                     console.log('Hay un error')
                   }

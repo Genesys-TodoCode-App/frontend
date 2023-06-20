@@ -60,9 +60,62 @@ const Juego = () => {
         handleGetJuego()
     }, [])
 
-    const handleSell = () => {
-        alert(`Entrada vendida a ${comprador}`);
+    const handleSell = (e) => {
+        e.preventDefault()
+        handleSubmit()
     };
+
+    const handleSubmit = () => {
+
+        const postEntrada = `http://localhost:8080/entradas`
+
+        const entrada = {
+            "idEntrada": 0,
+            "fechaHoraUtilizacion": juego.horarios[0].horaInicio,
+            "codigoIdentificacionEntrada": "",
+            "juego": {
+              "idJuego": juego.idJuego,
+              "nombreJuego": juego.nombreJuego,
+              "precioJuego": juego.precioJuego,
+              "cobroPaseOro": juego.paseDeOro,
+              "horarios": [
+                {
+                  "idHorario": 1,
+                  "horaInicio": "2023-06-19T16:00:00",
+                  "horaFin": "2023-06-19T20:00:00"
+                }
+              ]
+            }
+          }
+
+        try {
+            fetch(postEntrada, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(entrada)
+            })
+            .then( async (response) => {
+
+                if(response.ok) {
+                    if (response.headers.get("Content-Length") > 0) {
+                        const res = await response.json();
+                        alert(`Entrada vendida a ${comprador}`)
+                        setComprador(res);
+                    } else {
+                        alert(`Entrada vendida a ${comprador}`)
+                        setComprador(response);
+                    }
+                } else {
+                    console.log('Hay un error');
+                }
+            })
+            .catch((err) => {
+                console.log('Error en el .then: ', err)
+            })
+        } catch (error) {
+            console.log('Hubo un error: ', error)
+        }
+    }
 
     const getCompradoresURL = 'http://localhost:8080/compradores'
 
@@ -75,7 +128,6 @@ const Juego = () => {
               .then( async (response) => {
                   if(response.ok) {
                     const res = await response.json()
-                    // console.log('compradores ', res);
                     setCompradores(res)
                   } else {
                     console.log('Hay un error no se donde')
@@ -101,7 +153,6 @@ const Juego = () => {
               .then( async (response) => {
                   if(response.ok) {
                     const res = await response.json()
-                    // console.log('juego ', res);
                     setJuego(res)
                   } else {
                     console.log('Hay un error no se donde')
@@ -124,15 +175,11 @@ const Juego = () => {
                     src={juego.foto}
                     alt={juego.nombreJuego}
                 /> */}
-                {/* <p className="juego_description">{juego.descripcion}</p> */}
-                {/* {console.log('horario', juego.horarios)} */}
-                {/* <span>Horario: {juego.horarios}</span> */}
                 <p>Horarios: <br />
                     {juego.horarios.map( i => (
                         <span key={i.idHorarioJuego}>{i.horaInicio + " "} - {i.horaFin + " "} <br /></span>
                     ))}
                 </p>
-                {/* <span>Capacidad: {juego.capacidad}</span> */}
                 <span>precio: ${juego.precioJuego}</span>
             </section>
             <section className="comprador">
@@ -151,7 +198,7 @@ const Juego = () => {
                         ))}
                     </select>
                     <br />
-                    <button className="sell_game_btn" onClick={handleSell} type="submit">
+                    <button className="sell_game_btn" onClick={e => handleSell(e)} type="submit">
                         Vender
                     </button>
                 </form>
