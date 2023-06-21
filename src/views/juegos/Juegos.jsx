@@ -2,6 +2,8 @@
 import { useEffect, useState } from 'react'
 import Card from "../../components/cardJuego/Card.jsx";
 import "./juegosStyles.scss";
+import Navbar from '../../components/navbar/Navbar.jsx';
+import Footer from '../../components/footer/Footer.jsx';
 
 const Juegos = () => {
     const [juegos, setJuegos] = useState([])
@@ -36,6 +38,7 @@ const Juegos = () => {
 
     return (
         <main className="juegos_container">
+            <Navbar type={'empleadoJuego'} />
             <h1>Juegos</h1>
             <section className="cards_juegos">
                 {juegos?.map((juego) => (
@@ -46,11 +49,11 @@ const Juegos = () => {
                         descripcion={juego.descripcion}
                         foto={juego.foto}
                         horario={juego.horario}
-                        capacidad={juego.capacidad}
                         precio={juego.precioJuego}
                     />
                 ))}
             </section>
+            <Footer  />
         </main>
     );
 };

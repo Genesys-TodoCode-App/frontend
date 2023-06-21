@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './agregarcompradorstyles.scss'
+import Navbar from '../../components/navbar/Navbar'
+import Footer from '../../components/footer/Footer'
 
 const AgregarComprador = () => {
   
@@ -49,6 +51,7 @@ const AgregarComprador = () => {
 
   return (
     <main className='agregarComprador_container'>
+      <Navbar type={'empleadoAdministrativo'}/>
       <h1>Agregar Comprador</h1>
       <form className='agregarComprador_form' onSubmit={e => handleSubmit(e)}>
         <label htmlFor="nombreComprador">Nombre:</label>
@@ -68,6 +71,7 @@ const AgregarComprador = () => {
 
         <button className='submit_buyer' type='submit'>Agregar Comprador</button>
       </form>
+      <Footer />
     </main>
   )
 }

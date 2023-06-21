@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Navbar from "../../components/navbar/Navbar";
+import Footer from "../../components/footer/Footer";
 import "./juegoStyles.scss";
 
 const Juego = () => {
@@ -168,6 +170,7 @@ const Juego = () => {
 
     return (
         <main className="juego_container">
+            <Navbar type={'empleadoJuego'} />
             <section className="juego">
                 <h1 className="juego_title">{juego.nombreJuego}</h1>
                 {/* <img
@@ -203,6 +206,7 @@ const Juego = () => {
                     </button>
                 </form>
             </section>
+            <Footer />
         </main>
     );
 };
