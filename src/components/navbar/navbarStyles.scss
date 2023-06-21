@@ -1,0 +1,22 @@
+.navbar {
+    height: 50px;
+    top: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    gap: 20px;
+    opacity: .7;
+    width: 100%;
+}
+
+.nav_link {
+    color: #fff;
+    display: flex;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    align-items: center;
+    text-align: center;
+}
