@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import './cardStyles.scss'
 
 // eslint-disable-next-line react/prop-types
-const Card = ({ id, nombre, descripcion, foto, horario, capacidad, precio }) => {
+const Card = ({ id, nombre, descripcion, foto, horario, precio }) => {
 
   return (
     <div className='card'>
@@ -10,8 +10,6 @@ const Card = ({ id, nombre, descripcion, foto, horario, capacidad, precio }) => 
         <img className='card_img' src={foto} alt={nombre} />
         <p>{descripcion}</p>
         <span>Horario: {horario}</span>
-        <br />
-        <span>Capacidad: {capacidad}</span>
         <br />
         <span>Precio: {precio}</span>
         <br />

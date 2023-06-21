@@ -5,6 +5,7 @@ import Juegos from './views/juegos/Juegos.jsx'
 import Juego from './views/juego/Juego.jsx'
 import AgregarComprador from './views/agregarComprador/agregarComprador.jsx'
 import Empleados from './views/empleados/empleados.jsx'
+import Empleado from './views/empleado/empleado.jsx'
 import Ventas from './views/ventas/Ventas.jsx'
 import {
   createBrowserRouter,
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
   {
     path: "/empleados",
     element: <Empleados />,
+  },
+  {
+    path: "/empleados/:id",
+    element: <Empleado />,
   },
   {
     path: "/ventas",
