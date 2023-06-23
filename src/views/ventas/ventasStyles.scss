@@ -1,11 +1,9 @@
 .ventas_container {
     align-items: center;
-    // height: fit-content;
-    height: 100vh;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     gap: 30px;
-    margin-bottom: 20px;
 
     h1 {
         margin-top: 60px;
@@ -14,13 +12,12 @@
 
 table {
     margin-top: auto;
-    margin-bottom: auto;
+    margin-bottom: 20px;
     border: 1px solid #333;
 
-    td {
-        border-right: 1px solid #333;
-        border-top: 1px solid #333;
-        padding: 10px;
+    th, td {
+        border: 1px solid #333;
+        padding: 15px;
         white-space: znowrap;
     }
 }
