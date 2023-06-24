@@ -16,7 +16,7 @@ const Navbar = ({ type }) => {
         {
             id: 2,
             label: "Ventas en la fecha", 
-            url: ""
+            url: "/ventas-fecha"
         },
         {
             id: 3,
@@ -52,7 +52,6 @@ const Navbar = ({ type }) => {
 
     const handleSelectChange = (event) => {
         const selectedUrl = event.target.value;
-        console.log(selectedUrl);
         if (selectedUrl) {
             navigate(selectedUrl);
         }

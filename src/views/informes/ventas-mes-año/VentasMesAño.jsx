@@ -12,8 +12,6 @@ const VentasMesAño = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log('mes', mes)
-        console.log('anio', anio)
 
         const getVentasMesAnioURL = `http://localhost:8080/informes/sum-montos-ventas-en-mes-anio?mes=${mes}&anio=${anio}`
 
@@ -25,7 +23,7 @@ const VentasMesAño = () => {
         .then(response => response.json())
         .then( data => {
             if(data) {
-                setResponseData(data)
+                setResponseData('$' + data)
             }
         })
         .catch( error => {
