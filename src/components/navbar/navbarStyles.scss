@@ -15,8 +15,24 @@
     color: #fff;
     display: flex;
     font-weight: 700;
+    font-size: 16px;
     text-transform: uppercase;
     text-decoration: none;
     align-items: center;
     text-align: center;
+}
+
+.nav_link_select {
+    background-color: inherit;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    width: min-content;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.nav_link_option {
+    opacity: .7 !important;
 }

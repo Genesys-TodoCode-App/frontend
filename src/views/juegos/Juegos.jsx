@@ -43,12 +43,12 @@ const Juegos = () => {
             <section className="cards_juegos">
                 {juegos?.map((juego) => (
                     <Card
-                        key={juego.idJuego}
-                        id={juego.idJuego}
-                        nombre={juego.nombreJuego}
-                        descripcion={juego.descripcion}
-                        foto={juego.foto}
-                        horario={juego.horario}
+                        key={juego["Id Juegos"]}
+                        id={juego["Id Juegos"]}
+                        nombre={juego["Nombre Juegos"]}
+                        descripcion={juego["Descripciones"]}
+                        foto={juego["Rutas a las fotos"]}
+                        horario={juego.horarios}
                         precio={juego.precioJuego}
                     />
                 ))}
