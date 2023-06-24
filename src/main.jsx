@@ -7,6 +7,7 @@ import AgregarComprador from './views/agregarComprador/agregarComprador.jsx'
 import Empleados from './views/empleados/empleados.jsx'
 import Empleado from './views/empleado/empleado.jsx'
 import Ventas from './views/ventas/Ventas.jsx'
+import VentasMesAño from './views/informes/ventas-mes-año/VentasMesAño.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
   {
     path: "/ventas",
     element: <Ventas />,
+  },
+  {
+    path: "/ventas-mes-año",
+    element: <VentasMesAño />,
   }
 ]);
 
