@@ -67,53 +67,53 @@ const Juego = () => {
         handleSubmit()
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
 
         const postEntrada = `http://localhost:8080/entradas`
 
+        const now = new Date();
+        const currentDateTime = now.toLocaleString();
+
         const entrada = {
-            "idEntrada": 0,
-            "fechaHoraUtilizacion": juego.horarios[0].horaInicio,
-            "codigoIdentificacionEntrada": "",
             "juego": {
-              "idJuego": juego.idJuego,
-              "nombreJuego": juego.nombreJuego,
-              "precioJuego": juego.precioJuego,
-              "cobroPaseOro": juego.paseDeOro,
-              "horarios": [
-                {
-                  "idHorario": 1,
-                  "horaInicio": "2023-06-19T16:00:00",
-                  "horaFin": "2023-06-19T20:00:00"
-                }
-              ]
-            }
-          }
+                "horarios": [
+                  {
+                    "Id Horario Juego": juego.horarios[0]["Id Horario Juego"],
+                    "Hora Inicio": juego.horarios[0]["Hora Inicio"],
+                    "Hora Fin": juego.horarios[0]["Hora Fin"]
+                  }
+                ],
+                "Id Juegos": juego["Id Juegos"],
+                "Nombre Juegos": juego["Nombre Juegos"],
+                "Precio Juegos": juego["Precio Juegos"],
+                "Cobro Pase Oro": juego["Cobro Pase Oro"],
+                "Juegos Activos": juego["Juegos Activos"],
+                "Rutas a las fotos": juego["Rutas a las fotos"],
+                "Descripciones": juego["Descripciones"]
+            },
+            "fechaHoraUtilizacion": currentDateTime,
+        }
+
+        console.log('juego', juego);
 
         try {
-            fetch(postEntrada, {
+            const response = await fetch(postEntrada, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(entrada)
             })
-            .then( async (response) => {
-
-                if(response.ok) {
-                    if (response.headers.get("Content-Length") > 0) {
-                        const res = await response.json();
-                        alert(`Entrada vendida a ${comprador}`)
-                        setComprador(res);
-                    } else {
-                        alert(`Entrada vendida a ${comprador}`)
-                        setComprador(response);
-                    }
+            if(response.ok) {
+                if (response.headers.get("Content-Length") > 0) {
+                    const res = await response.json();
+                    alert(`Entrada vendida a ${comprador}`)
+                    setComprador(res);
                 } else {
-                    console.log('Hay un error');
+                    alert(`Entrada vendida a ${comprador}`)
+                    setComprador(response);
                 }
-            })
-            .catch((err) => {
-                console.log('Error en el .then: ', err)
-            })
+            } else {
+                console.log('response', response);
+            }
         } catch (error) {
             console.log('Hubo un error: ', error)
         }
@@ -172,7 +172,8 @@ const Juego = () => {
         <main className="juego_container">
             <Navbar type={'empleadoJuego'} />
             <section className="juego">
-                <h1 className="juego_title">{juego.nombreJuego}</h1>
+                {/* {console.log(juego)} */}
+                <h1 className="juego_title">{juego["Nombre Juegos"]}</h1>
                 {/* <img
                     className="juego_img"
                     src={juego.foto}
@@ -180,10 +181,10 @@ const Juego = () => {
                 /> */}
                 <p>Horarios: <br />
                     {juego.horarios.map( i => (
-                        <span key={i.idHorarioJuego}>{i.horaInicio + " "} - {i.horaFin + " "} <br /></span>
+                        <span key={i["Id Horario Juego"]}>{i["Hora Inicio"] + " "} - {i["Hora Fin"] + " "} <br /></span>
                     ))}
                 </p>
-                <span>precio: ${juego.precioJuego}</span>
+                <span>precio: ${juego["Precio Juegos"]}</span>
             </section>
             <section className="comprador">
                 <form>
@@ -195,8 +196,8 @@ const Juego = () => {
                         onChange={(event) => setComprador(event.target.value)}
                     >
                         {compradores.map((c) => (
-                            <option key={c.idComprador} value={c.nombreComprador + " " + c.apellidoComprador}>
-                                {c.nombreComprador + " " + c.apellidoComprador}
+                            <option key={c["Id Comprador"]} value={c["Nombre Comprador"] + " " + c["Apellido Comprador"]}>
+                                {c["Nombre Comprador"] + " " + c["Apellido Comprador"]}
                             </option>
                         ))}
                     </select>

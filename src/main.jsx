@@ -8,6 +8,8 @@ import Empleados from './views/empleados/empleados.jsx'
 import Empleado from './views/empleado/empleado.jsx'
 import Ventas from './views/ventas/Ventas.jsx'
 import VentasMesAño from './views/informes/ventas-mes-año/VentasMesAño.jsx'
+import VentasEnFecha from './views/informes/ventas-en-fecha/VentasEnFecha.jsx'
+import JuegoMasVendido from './views/informes/juego-con-mas-entradas-vendidas/JuegoMasVendido.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -46,6 +48,14 @@ const router = createBrowserRouter([
   {
     path: "/ventas-mes-año",
     element: <VentasMesAño />,
+  },
+  {
+    path: "/ventas-fecha",
+    element: <VentasEnFecha />,
+  },
+  {
+    path: "/juego-con-mas-entradas-vendidas",
+    element: <JuegoMasVendido />,
   }
 ]);
 

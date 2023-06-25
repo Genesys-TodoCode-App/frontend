@@ -47,6 +47,7 @@ const VentasMesAño = () => {
                         type="number"
                         id='mes'
                         name="mes"
+                        min={1}
                         max={12}
                         value={mes}
                         onChange={(e) => setMes(e.target.value)}

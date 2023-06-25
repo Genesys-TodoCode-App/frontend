@@ -21,7 +21,7 @@ const Navbar = ({ type }) => {
         {
             id: 3,
             label: "Juego con mas entradas vendidas", 
-            url: ""
+            url: "/juego-con-mas-entradas-vendidas"
         },
         {
             id: 4,
