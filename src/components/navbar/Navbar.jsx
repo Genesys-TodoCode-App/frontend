@@ -20,31 +20,26 @@ const Navbar = ({ type }) => {
         },
         {
             id: 3,
-            label: "Juego con mas entradas vendidas", 
+            label: "Juego con mas entradas vendidas hasta hoy", 
             url: "/juego-con-mas-entradas-vendidas"
         },
         {
             id: 4,
-            label: "Juego con mas entradas vendidas hasta hoy", 
-            url: ""
+            label: "Entradas vendidas por juego y fecha", 
+            url: "/entradas-por-juego-y-fecha"
         },
         {
             id: 5,
-            label: "Entradas vendidas por juego y fecha", 
-            url: ""
-        },
-        {
-            id: 6,
             label: "Entradas vendidas en fecha", 
             url: ""
         },
         {
-            id: 7,
+            id: 6,
             label: "Empleados con juegos asignados", 
             url: ""
         },
         {
-            id: 8,
+            id: 7,
             label: "Comprador con mas entradas pagadas", 
             url: ""
         }

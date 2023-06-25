@@ -10,6 +10,7 @@ import Ventas from './views/ventas/Ventas.jsx'
 import VentasMesAño from './views/informes/ventas-mes-año/VentasMesAño.jsx'
 import VentasEnFecha from './views/informes/ventas-en-fecha/VentasEnFecha.jsx'
 import JuegoMasVendido from './views/informes/juego-con-mas-entradas-vendidas/JuegoMasVendido.jsx'
+import EntradasPorJuegoYFecha from './views/informes/entradas-por-juego-y-fecha/EntradasPorJuegoYFecha.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
   {
     path: "/juego-con-mas-entradas-vendidas",
     element: <JuegoMasVendido />,
+  },
+  {
+    path: "/entradas-por-juego-y-fecha",
+    element: <EntradasPorJuegoYFecha />,
   }
 ]);
 

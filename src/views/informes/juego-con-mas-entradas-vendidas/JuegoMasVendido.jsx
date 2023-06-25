@@ -41,7 +41,7 @@ const JuegoMasVendido = () => {
     return (
         <main className="juegoMasVendido_container">
             <Navbar type={"empleadoAdministrativo"} />
-            <h1>JuegoMasVendido</h1>
+            <h1>Juego Más Vendido</h1>
             {loaded &&
                 <table>
                     <thead>

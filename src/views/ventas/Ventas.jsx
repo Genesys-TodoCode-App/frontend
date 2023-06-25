@@ -46,6 +46,7 @@ const Ventas = () => {
                         <th>Fecha de Venta</th>
                         <th>Juego</th>
                         <th>Precio de juego</th>
+                        <th>Monto de venta</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,6 +55,8 @@ const Ventas = () => {
                             <td>{i.entrada["Fecha y Hora Utilizacion"]}</td>
                             <td>{i.entrada.juego["Nombre Juegos"]}</td>
                             <td>{i.entrada.juego["Precio Juegos"]}</td>
+                            <td>{i["Monto Venta"]}</td>
+                            
                         </tr>
                     ))}
                 </tbody>
