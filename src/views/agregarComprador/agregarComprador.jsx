@@ -6,11 +6,12 @@ import Footer from '../../components/footer/Footer'
 const AgregarComprador = () => {
   
   const initialState = {
-    "nombreComprador": "",
-    "apellidoComprador": "",
-    "dniComprador": "",
-    "correoElectronicoComprador": "",
-    "paseDeOro": false
+    "Id Comprador": 0,
+    "Nombre Comprador": "",
+    "Apellido Comprador": "",
+    "DNI Comprador": "",
+    "Correo Electronico Comprador": "",
+    "Pase de Oro": false
   }
 
   const [comprador, setComprador] = useState(initialState)
@@ -34,8 +35,8 @@ const AgregarComprador = () => {
         body: JSON.stringify(comprador)
       })
       .then( async (response) => {
+        console.log(response)
         if(response.ok) {
-          // const res = await response.json()
           console.log('comprador venta ', response);
         } else {
           console.log('Hay un error no se donde')
@@ -45,7 +46,7 @@ const AgregarComprador = () => {
         console.log('Error: ', err)
       })  
     } catch (error) {
-      console.log('Hubuo un error: ', error)
+      console.log('Hubo un error: ', error)
     }
   }
 
@@ -55,19 +56,19 @@ const AgregarComprador = () => {
       <h1>Agregar Comprador</h1>
       <form className='agregarComprador_form' onSubmit={e => handleSubmit(e)}>
         <label htmlFor="nombreComprador">Nombre:</label>
-        <input className='form_field' type="text" id="nombreComprador" name="nombreComprador" value={comprador.nombreComprador} onChange={ e => handleChange(e)} />
+        <input className='form_field' type="text" id="nombreComprador" name="Nombre Comprador" value={comprador["Nombre Comprador"]} onChange={ e => handleChange(e)} />
 
         <label htmlFor="apellidoComprador">Apellido:</label>
-        <input className='form_field' type="text" id="apellidoComprador" name="apellidoComprador" value={comprador.apellidoComprador} onChange={ e => handleChange(e)} />
+        <input className='form_field' type="text" id="apellidoComprador" name="Apellido Comprador" value={comprador["Apellido Comprador"]} onChange={ e => handleChange(e)} />
 
         <label htmlFor="dniComprador">DNI:</label>
-        <input className='form_field' type="number" id="dniComprador" name="dniComprador" value={comprador.dniComprador} onChange={ e => handleChange(e)} />
+        <input className='form_field' type="number" id="dniComprador" name="DNI Comprador" value={comprador["DNI Comprador"]} onChange={ e => handleChange(e)} />
 
         <label htmlFor="correoElectronicoComprador">Email:</label>
-        <input className='form_field' type="email" id="correoElectronicoComprador" name="correoElectronicoComprador" value={comprador.correoElectronicoComprador} onChange={ e => handleChange(e)} />
+        <input className='form_field' type="email" id="correoElectronicoComprador" name="Correo Electronico Comprador" value={comprador["Correo Electronico Comprador"]} onChange={ e => handleChange(e)} />
 
         <label htmlFor="paseDeOro">Pase de Oro:</label>
-        <input className='form_field' type="checkbox" id="paseDeOro" name="paseDeOro" value={comprador.paseDeOro} onChange={ e => handleChange(e)} />
+        <input className='form_field' type="checkbox" id="paseDeOro" name="Pase de Oro" value={comprador["Pase de Oro"]} onChange={ e => handleChange(e)} />
 
         <button className='submit_buyer' type='submit'>Agregar Comprador</button>
       </form>
