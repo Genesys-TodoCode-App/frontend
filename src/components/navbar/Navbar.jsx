@@ -36,7 +36,7 @@ const Navbar = ({ type }) => {
         {
             id: 6,
             label: "Empleados con juegos asignados", 
-            url: ""
+            url: "/empleados-con-juegos-asignados"
         },
         {
             id: 7,

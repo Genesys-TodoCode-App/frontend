@@ -12,6 +12,7 @@ import VentasEnFecha from './views/informes/ventas-en-fecha/VentasEnFecha.jsx'
 import JuegoMasVendido from './views/informes/juego-con-mas-entradas-vendidas/JuegoMasVendido.jsx'
 import EntradasPorJuegoYFecha from './views/informes/entradas-por-juego-y-fecha/EntradasPorJuegoYFecha.jsx'
 import EntradasVendidasEnFecha from './views/informes/entradas-vendidas-en-fecha/EntradasVEndidasEnFecha.jsx'
+import EmpleadosConJuegosAsignados from './views/informes/empleados-con-juegos-asignados/EmpleadosConJuegosAsignados.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
   {
     path: "/entradas-vendidas-en-fecha",
     element: <EntradasVendidasEnFecha />,
+  },
+  {
+    path: "/empleados-con-juegos-asignados",
+    element: <EmpleadosConJuegosAsignados />,
   }
 ]);
 
