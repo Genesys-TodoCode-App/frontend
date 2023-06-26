@@ -42,18 +42,18 @@ const EntradasPorJuegoYFecha = () => {
     fetch(getJuegoURL, {
         method: "GET",
         headers: { "Content-Type": "application/json" }
+    })
+    .then( async (response) => {
+        if(response.ok) {
+          const res = await response.json()
+          setJuego(res)
+        } else {
+          console.log('Hay un error en la respuesta')
+        }
       })
-      .then( async (response) => {
-          if(response.ok) {
-            const res = await response.json()
-            setJuego(res)
-          } else {
-            console.log('Hay un error en la respuesta')
-          }
-        })
-      .catch((err) => {
-        console.log('Error: ', err)
-      })
+    .catch((err) => {
+      console.log('Error: ', err)
+    })
 
   }
 

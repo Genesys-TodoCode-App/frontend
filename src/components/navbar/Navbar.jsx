@@ -31,7 +31,7 @@ const Navbar = ({ type }) => {
         {
             id: 5,
             label: "Entradas vendidas en fecha", 
-            url: ""
+            url: "/entradas-vendidas-en-fecha"
         },
         {
             id: 6,
