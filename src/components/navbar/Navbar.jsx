@@ -41,7 +41,7 @@ const Navbar = ({ type }) => {
         {
             id: 7,
             label: "Comprador con mas entradas pagadas", 
-            url: ""
+            url: "/comprador-con-mas-entradas-pagadas"
         }
     ]
 

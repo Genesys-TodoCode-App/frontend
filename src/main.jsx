@@ -13,6 +13,7 @@ import JuegoMasVendido from './views/informes/juego-con-mas-entradas-vendidas/Ju
 import EntradasPorJuegoYFecha from './views/informes/entradas-por-juego-y-fecha/EntradasPorJuegoYFecha.jsx'
 import EntradasVendidasEnFecha from './views/informes/entradas-vendidas-en-fecha/EntradasVEndidasEnFecha.jsx'
 import EmpleadosConJuegosAsignados from './views/informes/empleados-con-juegos-asignados/EmpleadosConJuegosAsignados.jsx'
+import CompradorConMasEntradasPagadas from './views/informes/comprador-con-mas-entradas-pagadas/CompradorConMasEntradasPagadas.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
   {
     path: "/empleados-con-juegos-asignados",
     element: <EmpleadosConJuegosAsignados />,
+  },
+  {
+    path: "/comprador-con-mas-entradas-pagadas",
+    element: <CompradorConMasEntradasPagadas />,
   }
 ]);
 

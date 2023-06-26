@@ -35,8 +35,6 @@ const EmpleadosConJuegosAsignados = () => {
         <main className='EmpleadosConJuegosAsignados_container'>
             <Navbar type={'empleadoAdministrativo'}/>
             <h1>Empleados Con Juegos Asignados</h1>
-            {console.log(empleadosConJuegosAsignados)}
-
             <table>
                 <thead>
                     <tr>
