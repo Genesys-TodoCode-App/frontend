@@ -13,8 +13,7 @@ const VentasMesAño = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const getVentasMesAnioURL = `http://localhost:8080/informes/sum-montos-ventas-en-mes-anio?mes=${mes}&anio=${anio}`
-
+        const getVentasMesAnioURL = `http://localhost:8080/informes/sumatoria-montos-ventas-por-mes-anio?mes=${mes}&anio=${anio}`
         
         fetch(getVentasMesAnioURL, {
             method: 'GET',

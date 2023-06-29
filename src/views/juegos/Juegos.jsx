@@ -20,17 +20,17 @@ const Juegos = () => {
                 method: "GET",
                 headers: { "Content-Type": "application/json" }
               })
-              .then( async (response) => {
-                  if(response.ok) {
+            .then( async (response) => {
+                if(response.ok) {
                     const res = await response.json()
-                    setJuegos(res);
-                  } else {
+                    setJuegos(res)
+                } else {
                     console.log('Hay un error')
-                  }
-                })
-              .catch((err) => {
+                }
+            })
+            .catch((err) => {
                 console.log('Error: ', err)
-              })
+            })
         } catch (error) {
             console.log('error: ', error)
         }
@@ -41,15 +41,14 @@ const Juegos = () => {
             <Navbar type={'empleadoJuego'} />
             <h1>Juegos</h1>
             <section className="cards_juegos">
-                {juegos?.map((juego) => (
+                {juegos && juegos.map((juego) => (
                     <Card
-                        key={juego["Id Juegos"]}
-                        id={juego["Id Juegos"]}
-                        nombre={juego["Nombre Juegos"]}
+                        key={juego["Id Juego"]}
+                        id={juego["Id Juego"]}
+                        nombre={juego["Nombre juego"]}
                         descripcion={juego["Descripciones"]}
                         foto={juego["Rutas a las fotos"]}
-                        horario={juego.horarios}
-                        precio={juego.precioJuego}
+                        precio={juego["Precio juego"]}
                     />
                 ))}
             </section>

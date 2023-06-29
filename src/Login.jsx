@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import './Login.scss'
+import Footer from './components/footer/Footer'
 
 const Login = () => {
 
   const initialState = {
-    usuario: '',
-    contrasenia: ''
+    "Nombre Usuario": '',
+    "Contrasenia Usuario": ''
   }
   const [user, setUser] = useState(initialState)
 
@@ -20,7 +21,7 @@ const Login = () => {
 
     e.preventDefault();
 
-    const loginURL = `http://localhost:8080/login?usuario=${user.usuario}&contrasenia=${user.contrasenia}`
+    const loginURL = `http://localhost:8080/login?nombreUsuario=${user["Nombre Usuario"]}&contraseniaUsuario=${user["Contrasenia Usuario"]}`
 
     fetch(loginURL, {
       method: "POST",
@@ -49,14 +50,15 @@ const Login = () => {
       <h1>Bienvenido a CodeLand!</h1>
       <form className='login_form' onSubmit={handleSubmit}>
 
-        <label htmlFor="usuario">Usuario:</label>
-        <input className='form_field' type="text" id="usuario" name="usuario" value={user.usuario} onChange={e => handleChange(e)} />
+        <label htmlFor="Nombre Usuario">Usuario:</label>
+        <input className='form_field' type="text" id="Nombre Usuario" name="Nombre Usuario" value={user["Nombre Usuario"]} onChange={e => handleChange(e)} />
 
-        <label htmlFor="contrasenia">Contraseña:</label>
-        <input className='form_field' type="password" id="contrasenia" name="contrasenia" value={user.contrasenia} onChange={e => handleChange(e)} />
+        <label htmlFor="Contrasenia Usuario">Contraseña:</label>
+        <input className='form_field' type="password" id="Contrasenia Usuario" name="Contrasenia Usuario" value={user["Contrasenia Usuario"]} onChange={e => handleChange(e)} />
 
         <input className='submit_btn' type="submit" value="Enviar" />
       </form>
+      <Footer />
     </main>
   )
 

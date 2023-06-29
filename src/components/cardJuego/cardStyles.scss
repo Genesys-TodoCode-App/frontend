@@ -7,6 +7,7 @@
     height: fit-content;
     padding: 20px;
     width: 250px;
+    box-shadow: 4px 4px 10px #fff;
 }
 
 .card_title {
@@ -18,8 +19,9 @@
 }
 
 .card_img {
-    height: 166px;
+    height: 166px ;
     width: 100%;
+    border: 1px solid grey;
 }
 
 .card_sell_btn {

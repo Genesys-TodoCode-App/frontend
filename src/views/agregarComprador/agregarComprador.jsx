@@ -37,7 +37,8 @@ const AgregarComprador = () => {
       .then( async (response) => {
         console.log(response)
         if(response.ok) {
-          console.log('comprador venta ', response);
+          setComprador(initialState)
+          alert('Se agrego el comprador: ' + comprador["Nombre Comprador"] + ' ' + comprador["Apellido Comprador"])
         } else {
           console.log('Hay un error no se donde')
         }

@@ -11,8 +11,8 @@ const VentasEnFecha = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        const getVentasenFechaURL = `http://localhost:8080/informes/sum-monto-venta-por-fecha?fecha=${date}`
-        
+        const getVentasenFechaURL = `http://localhost:8080/informes/sumatoria-monto-venta-por-dia?fecha=${date}`
+
         fetch(getVentasenFechaURL, {
             method: 'GET',
             headers: { "Content-Type": "application/json" },

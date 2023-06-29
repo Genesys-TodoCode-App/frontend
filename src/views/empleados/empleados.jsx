@@ -17,22 +17,22 @@ const Empleados = () => {
   const handleGetEmpleados = async() => {
       try {
           fetch(getEmpleadosURL, {
-              method: "GET",
-              headers: { "Content-Type": "application/json" }
-            })
-            .then( async (response) => {
-                if(response.ok) {
-                  const res = await response.json()
-                  setEmpleados(res);
-                } else {
-                  console.log('Hay un error')
-                }
-              })
-            .catch((err) => {
-              console.log('Error: ', err)
-            })
+            method: "GET",
+            headers: { "Content-Type": "application/json" }
+          })
+          .then( async (response) => {
+            if(response.ok) {
+              const res = await response.json()
+              setEmpleados(res.content);
+            } else {
+              console.log('Hay un error')
+            }
+          })
+          .catch((err) => {
+            console.log('Error: ', err)
+          })
       } catch (error) {
-          console.log('error: ', error)
+        console.log('error: ', error)
       }
   }
 

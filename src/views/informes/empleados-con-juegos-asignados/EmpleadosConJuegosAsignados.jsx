@@ -11,7 +11,7 @@ const EmpleadosConJuegosAsignados = () => {
         getEmpleadosConJuegosAsignados()
     }, [empleadosConJuegosAsignados])
 
-    const getEmpleadosConJuegosAsignadosURL = 'http://localhost:8080/informes/empleados-con-juegos-asignados'
+    const getEmpleadosConJuegosAsignadosURL = 'http://localhost:8080/informes/lista-empleados-con-juegos-asignados'
 
     const getEmpleadosConJuegosAsignados = () => {
         fetch(getEmpleadosConJuegosAsignadosURL, {
@@ -35,24 +35,27 @@ const EmpleadosConJuegosAsignados = () => {
         <main className='EmpleadosConJuegosAsignados_container'>
             <Navbar type={'empleadoAdministrativo'}/>
             <h1>Empleados Con Juegos Asignados</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Juego</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {empleadosConJuegosAsignados.map((e, index)=> (
-                        <tr key={index}>
-                            <th>{e[0]}</th>
-                            <th>{e[1]}</th>
-                            <th>{e[2]}</th>
+
+            {empleadosConJuegosAsignados && (
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Juego</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {empleadosConJuegosAsignados.map((e, index)=> (
+                            <tr key={index}>
+                                <th>{e[0]}</th>
+                                <th>{e[1]}</th>
+                                <th>{e[2]}</th>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            )}
             <Footer />
         </main>
     )
