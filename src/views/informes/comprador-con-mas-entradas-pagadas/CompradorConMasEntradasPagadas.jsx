@@ -13,7 +13,7 @@ const CompradorConMasEntradasPagadas = () => {
     const handleGetCompradores = (e) => {
         e.preventDefault()
 
-        const getCompradorConMArEntradasPagadasURL =`http://localhost:8080/informes/comprador-con-mas-entradas-pagadas?mes=${mes}&anio=${anio}`
+        const getCompradorConMArEntradasPagadasURL =`http://localhost:8080/informes/comprador-con-mas-entradas-compradas?mes=${mes}&anio=${anio}`
 
         fetch(getCompradorConMArEntradasPagadasURL, {
             method: "GET",

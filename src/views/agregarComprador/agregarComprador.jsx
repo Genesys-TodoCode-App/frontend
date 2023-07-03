@@ -35,7 +35,6 @@ const AgregarComprador = () => {
         body: JSON.stringify(comprador)
       })
       .then( async (response) => {
-        console.log(response)
         if(response.ok) {
           setComprador(initialState)
           alert('Se agrego el comprador: ' + comprador["Nombre Comprador"] + ' ' + comprador["Apellido Comprador"])
