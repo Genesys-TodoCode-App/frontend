@@ -13,16 +13,21 @@ const EntradasVendidasEnFecha = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        const newDAte = date + 'T18:00'
-        // cambiar hora
+        const inputDate = date
+        const parts = inputDate.split("-")
+        const date2 = new Date(parts[0], parts[1] - 1, parts[2]);
+        const formattedDate = `${date2.getDate()}/${date2.getMonth() + 1}/${date2.getFullYear()}`;
 
-        const getEntradasVendidasEnFecha = `http://localhost:8080/informes/entradas-vendidas-en-fecha?fecha=${newDAte}`
+        console.log('formattedDate', formattedDate)
+
+        const getEntradasVendidasEnFecha = `http://localhost:8080/informes/entradas-vendidas-en-fecha?fecha=${formattedDate}`
 
         fetch(getEntradasVendidasEnFecha, {
             method: "GET",
             headers: { "Content-Type": "application/json" }
         })
         .then( async (response) => {
+            console.log('response', response);
             if(response.ok) {
               const res = await response.json()
               setResponse(res)

@@ -13,7 +13,7 @@ const Ventas = () => {
 
     const handleGetVentas = () => {
 
-        const getVentasURL = 'http://localhost:8080/ventas-entradas'
+        const getVentasURL = 'http://localhost:8080/ventas-entradas?page=1&size=20'
 
         try {
             fetch(getVentasURL, {
@@ -21,9 +21,12 @@ const Ventas = () => {
                 headers: { "Content-Type": "application/json" }
             })
             .then( async (response) => {
+                console.log('response', response);
+
                 if(response.ok) {
                     const res = await response.json()
-                    setVentas(res)
+                    setVentas(res.content)
+                    console.log('res', res);
                 } else {
                     console.log('Hay un error')
                 }
@@ -50,6 +53,7 @@ const Ventas = () => {
                     </tr>
                 </thead>
                 <tbody>
+                    {console.log('ventas', ventas)}
                     {ventas.map( i => (
                         <tr key={i["Id Venta Entradas"]}>
                             <td>{i.entrada["Fecha y Hora Utilizacion"]}</td>

@@ -60,7 +60,7 @@ const Juego = () => {
     useEffect(() => {
         handleGetCompradores()
         handleGetJuego()
-    }, [])
+    }, [compradores, juego])
 
     const handleSell = (e) => {
         e.preventDefault()
@@ -69,35 +69,25 @@ const Juego = () => {
 
     const handleSubmit = async () => {
 
-        const postEntrada = `http://localhost:8080/entradas`
+        const postEntradaURL = `http://localhost:8080/entradas`
 
         const now = new Date();
         const currentDateTime = now.toLocaleString();
 
         const entrada = {
-            "juego": {
-                "horarios": [
-                  {
-                    "Id Horario Juego": juego.horarios[0]["Id Horario Juego"],
-                    "Hora Inicio": juego.horarios[0]["Hora Inicio"],
-                    "Hora Fin": juego.horarios[0]["Hora Fin"]
-                  }
-                ],
-                "Id Juegos": juego["Id Juegos"],
-                "Nombre Juegos": juego["Nombre Juegos"],
-                "Precio Juegos": juego["Precio Juegos"],
-                "Cobro Pase Oro": juego["Cobro Pase Oro"],
-                "Juegos Activos": juego["Juegos Activos"],
-                "Rutas a las fotos": juego["Rutas a las fotos"],
-                "Descripciones": juego["Descripciones"]
-            },
-            "fechaHoraUtilizacion": currentDateTime,
+            "Id Entrada": 0,
+            "Codigo Identificacion Entrada": "",
+            "Fecha y Hora Utilizacion": currentDateTime,
+            "Id juego": juego["Id Juegos"],
+            "Nombre del Juego": juego["Nombre Juegos"]
         }
 
-        console.log('juego', juego);
+        // console.log('juego entrada', juego);
+        console.log('entrada', entrada);
+
 
         try {
-            const response = await fetch(postEntrada, {
+            const response = await fetch(postEntradaURL, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(entrada)
@@ -172,19 +162,23 @@ const Juego = () => {
         <main className="juego_container">
             <Navbar type={'empleadoJuego'} />
             <section className="juego">
-                {/* {console.log(juego)} */}
+                {/* {console.log('juego: ', juego)} */}
                 <h1 className="juego_title">{juego["Nombre Juegos"]}</h1>
-                {/* <img
+                <img
                     className="juego_img"
-                    src={juego.foto}
-                    alt={juego.nombreJuego}
-                /> */}
-                <p>Horarios: <br />
+                    src={juego["Rutas a las fotos"]}
+                    alt={juego["Nombre Juegos"]}
+                />
+                <p>Horarios:
+                    <br />
                     {juego.horarios.map( i => (
-                        <span key={i["Id Horario Juego"]}>{i["Hora Inicio"] + " "} - {i["Hora Fin"] + " "} <br /></span>
+                        <span key={i["Id Horario Juego"]}>
+                            {i["Hora Inicio"] + " "} - {i["Hora Fin"] + " "}
+                            <br />
+                        </span>
                     ))}
                 </p>
-                <span>precio: ${juego["Precio Juegos"]}</span>
+                <span>Precio: ${juego["Precio Juegos"]}</span>
             </section>
             <section className="comprador">
                 <form>
@@ -192,11 +186,15 @@ const Juego = () => {
                         className="select_buyer"
                         id="comprador"
                         name="comprador"
-                        value={comprador}
-                        onChange={(event) => setComprador(event.target.value)}
+                        value={comprador ? comprador["Id Comprador"] : ""}
+                        onChange={(c) => setComprador(
+                            compradores.content?.find(
+                                (comprador) => comprador["Id Comprador"] === Number(c.target.value)
+                            )
+                        )}
                     >
-                        {compradores.map((c) => (
-                            <option key={c["Id Comprador"]} value={c["Nombre Comprador"] + " " + c["Apellido Comprador"]}>
+                        {compradores.content?.map((c) => (
+                            <option key={c["Id Comprador"]} value={c["Id Comprador"]}>
                                 {c["Nombre Comprador"] + " " + c["Apellido Comprador"]}
                             </option>
                         ))}

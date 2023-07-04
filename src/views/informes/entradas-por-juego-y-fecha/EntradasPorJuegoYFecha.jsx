@@ -15,12 +15,15 @@ const EntradasPorJuegoYFecha = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const newDate = dateSearch + "T18:00:00"
+    // const newDate = dateSearch
     // cambiar la hora
+    // console.log('date', dateSearch)
+    // console.log('juegoIDSearch', juegoIDSearch)
 
-    const EntradasPorJuegoyFechaURL = `http://localhost:8080/informes/entradas-vendidas-por-juego-y-fecha?juego=${juegoIDSearch}&fecha=${newDate}`
 
-    if(newDate && juegoIDSearch) {
+    const EntradasPorJuegoyFechaURL = `http://localhost:8080/informes/cantidad-entradas-vendidas-por-juego-y-fecha?juego=${juegoIDSearch}&fecha=${dateSearch}`
+
+    if(dateSearch && juegoIDSearch) {
       fetch(EntradasPorJuegoyFechaURL, {
         method: 'GET',
         headers: { "Content-Type": "application/json" }
@@ -47,6 +50,7 @@ const EntradasPorJuegoYFecha = () => {
         if(response.ok) {
           const res = await response.json()
           setJuego(res)
+          console.log(res);
         } else {
           console.log('Hay un error en la respuesta')
         }
@@ -74,7 +78,9 @@ const EntradasPorJuegoYFecha = () => {
 
         {isLoaded && 
           <div className='response'>
-            <span>Entradas vendidas: {response}</span>
+            <span>Fecha: {dateSearch}</span>
+            <br />
+            <span>Cantidad de entradas vendidas: {response}</span>
             <br />
             <span>Juego: {juego["Nombre Juegos"]}</span>
           </div>
