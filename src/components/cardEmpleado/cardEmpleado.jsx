@@ -4,7 +4,6 @@ import './cardEmpleadoStyles.scss'
 const cardEmpleado = ({ id, name, lastname, juego}) => {
   return (
     <div className='card'>
-        {console.log('id: ', id)}
         <h1>{name + ' ' + lastname}</h1>
         {/* <span>juego asignado: {juego}</span> */}
         <br />
