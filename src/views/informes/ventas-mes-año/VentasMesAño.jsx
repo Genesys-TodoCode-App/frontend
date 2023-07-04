@@ -62,7 +62,7 @@ const VentasMesAño = () => {
                         onChange={(e) => setAnio(e.target.value)}
                     />
 
-                    <button type="submit" onClick={e => handleSubmit(e)}>buscar</button>
+                    <button className="btn" type="submit" onClick={e => handleSubmit(e)}>buscar</button>
                 </form>
 
                 <br />

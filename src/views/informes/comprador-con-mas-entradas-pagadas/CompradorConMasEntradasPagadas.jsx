@@ -50,7 +50,7 @@ const CompradorConMasEntradasPagadas = () => {
                     <label htmlFor="anio">Año</label>
                     <input type="text" max={2023} name={anio} id={anio} value={anio} onChange={e => setAnio(e.target.value)} />
 
-                    <button type='submit' onClick={(e) => handleGetCompradores(e)}>Buscar</button>
+                    <button className='btn' type='submit' onClick={(e) => handleGetCompradores(e)}>Buscar</button>
                 </form>
                 {(compradores && isLoaded) ? (
                     <table className='reponse'>

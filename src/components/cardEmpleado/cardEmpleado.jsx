@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import './cardEmpleadoStyles.scss'
 
 const cardEmpleado = ({ id, name, lastname, juego}) => {
   return (
@@ -8,7 +7,7 @@ const cardEmpleado = ({ id, name, lastname, juego}) => {
         {/* <span>juego asignado: {juego}</span> */}
         <br />
         <Link to={`/empleados/${id}`}>
-            <button className='card_sell_btn'>editar</button>
+            <button className='btn'>editar</button>
         </Link>
     </div>
   )

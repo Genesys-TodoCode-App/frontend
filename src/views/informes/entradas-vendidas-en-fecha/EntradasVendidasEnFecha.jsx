@@ -50,7 +50,7 @@ const EntradasVendidasEnFecha = () => {
                     <label htmlFor="date">Fecha:</label>
                     <input type="date" id='date' name='date' value={date} onChange={e => setDate(e.target.value)} />
 
-                    <button type='submit'>Buscar</button>
+                    <button className='btn' type='submit'>Buscar</button>
                 </form>
                 <br />
                 {(response && isLoaded) ? (

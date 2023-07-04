@@ -200,7 +200,7 @@ const Juego = () => {
                         </select>
                     )}
                     <br />
-                    <button className="" type="submit">
+                    <button className="btn" type="submit">
                         Añadir juego
                     </button>
                 </form>

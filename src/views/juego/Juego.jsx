@@ -200,7 +200,7 @@ const Juego = () => {
                         ))}
                     </select>
                     <br />
-                    <button className="sell_game_btn" onClick={e => handleSell(e)} type="submit">
+                    <button className="btn" onClick={e => handleSell(e)} type="submit">
                         Vender
                     </button>
                 </form>

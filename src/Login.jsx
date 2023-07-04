@@ -56,7 +56,7 @@ const Login = () => {
         <label htmlFor="Contrasenia Usuario">Contraseña:</label>
         <input className='form_field' type="password" id="Contrasenia Usuario" name="Contrasenia Usuario" value={user["Contrasenia Usuario"]} onChange={e => handleChange(e)} />
 
-        <input className='submit_btn' type="submit" value="Enviar" />
+        <input className='btn' type="submit" value="Enviar" />
       </form>
       <Footer />
     </main>

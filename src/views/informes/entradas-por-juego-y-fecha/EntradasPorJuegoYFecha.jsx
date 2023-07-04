@@ -73,7 +73,7 @@ const EntradasPorJuegoYFecha = () => {
           <label htmlFor="fecha">fecha</label>
           <input required={true} type="date" name='fecha' id='fecha' value={dateSearch} onChange={e => setDateSearch(e.target.value)} />
 
-          <button type='submit' onClick={e => handleSubmit(e)}>Buscar</button>
+          <button className='btn' type='submit' onClick={e => handleSubmit(e)}>Buscar</button>
         </form>
 
         {isLoaded && 

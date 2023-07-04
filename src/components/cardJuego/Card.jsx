@@ -13,7 +13,7 @@ const Card = ({ id, nombre, descripcion, foto, precio }) => {
         <span>Precio: {precio}</span>
         <br />
         <Link to={`/juegos/${id}`}>
-          <button className='card_sell_btn'>vender</button>
+          <button className='btn'>vender</button>
         </Link>
     </div>
   )

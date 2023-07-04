@@ -45,7 +45,7 @@ const VentasEnFecha = () => {
                         onChange={ e => setDate(e.target.value)}
                         type="date"
                     />
-                    <button type='submit' onClick={ e => handleSubmit (e)}>Buscar</button>
+                    <button className="btn" type='submit' onClick={ e => handleSubmit (e)}>Buscar</button>
                 </form>
                 <span>
                     {responseData}

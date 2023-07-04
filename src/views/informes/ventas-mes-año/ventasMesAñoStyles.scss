@@ -21,23 +21,4 @@
         margin: 10px auto;
         width: 250px;
     }
-
-    button {
-        background-color: #fff;
-        border: 1px solid grey;
-        border-radius: 10px;
-        font-weight: 600;
-        padding: 10px;
-        margin: auto;
-        margin-top: 20px;
-        text-transform: uppercase;
-        width: fit-content;
-    }
-
-    button:hover {
-        background-color: #4158D0;
-        color: #fff;
-        transition: .5s;
-    }
-
 }
