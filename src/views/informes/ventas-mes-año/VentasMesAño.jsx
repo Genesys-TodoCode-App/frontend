@@ -43,6 +43,7 @@ const VentasMesAño = () => {
                 <form className="ventasMesAño_form">
                     <label htmlFor="mes">Mes:</label>
                     <input
+                        className="form_field"
                         type="number"
                         id='mes'
                         name="mes"
@@ -54,9 +55,11 @@ const VentasMesAño = () => {
                     
                     <label htmlFor="anio">Año:</label>
                     <input
+                        className="form_field"
                         type="number"
                         id="anio"
                         name="anio"
+                        min={2020}
                         max={2023}
                         value={anio}
                         onChange={(e) => setAnio(e.target.value)}

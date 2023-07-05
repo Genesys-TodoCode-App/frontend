@@ -17,8 +17,12 @@
     text-align: left;
     justify-content: center;
     gap: 10px;
-    width: 350px;
+    width: 300px;
     margin: auto;
+
+    label {
+        margin-left: 26px;
+    }
 }
 
 .reponse {

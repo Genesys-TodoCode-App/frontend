@@ -39,6 +39,7 @@ const VentasEnFecha = () => {
                 <form className="ventasEnFecha_form">
                     <label htmlFor="date">Fecha:</label>
                     <input
+                        className='form_field'
                         id='date'
                         name='date'
                         value={date}

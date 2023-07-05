@@ -70,7 +70,7 @@ const AgregarComprador = () => {
         <label htmlFor="paseDeOro">Pase de Oro:</label>
         <input className='form_field' type="checkbox" id="paseDeOro" name="Pase de Oro" value={comprador["Pase de Oro"]} onChange={ e => handleChange(e)} />
 
-        <button className='submit_buyer' type='submit'>Agregar Comprador</button>
+        <button className='btn' type='submit'>Agregar Comprador</button>
       </form>
       <Footer />
     </main>

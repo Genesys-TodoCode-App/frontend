@@ -47,8 +47,8 @@ const EntradasVendidasEnFecha = () => {
             <h1>Entradas Vendidas En Fecha</h1>
             <section>
                 <form className='EntradasVendidasEnFecha_form' onSubmit={handleSubmit}>
-                    <label htmlFor="date">Fecha:</label>
-                    <input type="date" id='date' name='date' value={date} onChange={e => setDate(e.target.value)} />
+                    <label htmlFor="date">Fecha: </label>
+                    <input className='form_field' type="date" id='date' name='date' value={date} onChange={e => setDate(e.target.value)} />
 
                     <button className='btn' type='submit'>Buscar</button>
                 </form>

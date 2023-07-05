@@ -45,10 +45,10 @@ const CompradorConMasEntradasPagadas = () => {
             <section>
                 <form className='CompradorConMasEntradasPagadas_form'>
                     <label htmlFor="mes">Mes:</label>
-                    <input type="text" min={1} max={12} name={mes} id={mes} value={mes} onChange={e => setMes(e.target.value)} />
+                    <input className='form_field' type="text" min={1} max={12} name={mes} id={mes} value={mes} onChange={e => setMes(e.target.value)} />
 
-                    <label htmlFor="anio">Año</label>
-                    <input type="text" max={2023} name={anio} id={anio} value={anio} onChange={e => setAnio(e.target.value)} />
+                    <label htmlFor="anio">Año:</label>
+                    <input className='form_field' type="number" min={2020} max={2023} name={anio} id={anio} value={anio} onChange={e => setAnio(e.target.value)} />
 
                     <button className='btn' type='submit' onClick={(e) => handleGetCompradores(e)}>Buscar</button>
                 </form>

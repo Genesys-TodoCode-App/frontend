@@ -68,10 +68,10 @@ const EntradasPorJuegoYFecha = () => {
       <section>
         <form className='EntradasPorJuegoYFecha_form'>
           <label htmlFor="juego_id">Juego ID</label>
-          <input required={true} type="text" name='juego_id' id='juego_id' min={1} max={12} value={juegoIDSearch} onChange={e => setJuegoIDSearch(e.target.value)} />
+          <input className='form_field' required={true} type="text" name='juego_id' id='juego_id' min={1} max={12} value={juegoIDSearch} onChange={e => setJuegoIDSearch(e.target.value)} />
 
           <label htmlFor="fecha">fecha</label>
-          <input required={true} type="date" name='fecha' id='fecha' value={dateSearch} onChange={e => setDateSearch(e.target.value)} />
+          <input className='form_field' required={true} type="date" name='fecha' id='fecha' value={dateSearch} onChange={e => setDateSearch(e.target.value)} />
 
           <button className='btn' type='submit' onClick={e => handleSubmit(e)}>Buscar</button>
         </form>
